@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1562032535 source:c:\users\pauli\documents\projetos\morse\arvore.cpp
+1562035769 source:c:\users\pauli\documents\projetos\morse\arvore.cpp
 	"Arvore.h"
 	<stdio.h>
 	<string.h>
@@ -10,27 +10,27 @@
 
 1561945439 c:\users\pauli\documents\projetos\morse\no.h
 
-1562031802 source:c:\users\pauli\documents\projetos\morse\main.cpp
+1562035735 source:c:\users\pauli\documents\projetos\morse\main.cpp
 	"Arvore.h"
 	"Criptografia.h"
 	"Orquestrador.h"
 	<iostream>
 
-1562031605 source:c:\users\pauli\documents\projetos\morse\no.cpp
+1562035735 source:c:\users\pauli\documents\projetos\morse\no.cpp
 	"No.h"
 
-1562026864 c:\users\pauli\documents\projetos\morse\orquestrador.h
+1562035735 c:\users\pauli\documents\projetos\morse\orquestrador.h
 	"Arvore.h"
 
-1562027038 source:c:\users\pauli\documents\projetos\morse\orquestrador.cpp
+1562035735 source:c:\users\pauli\documents\projetos\morse\orquestrador.cpp
 	<stdio.h>
 	<stdlib.h>
 	<iostream>
 
-1562029752 source:c:\users\pauli\documents\projetos\morse\criptografia.cpp
+1562035735 source:c:\users\pauli\documents\projetos\morse\criptografia.cpp
 	"Criptografia.h"
 	<iostream>
 
-1562027294 c:\users\pauli\documents\projetos\morse\criptografia.h
+1562035735 c:\users\pauli\documents\projetos\morse\criptografia.h
 	"Arvore.h"
 

@@ -33,8 +33,17 @@
 		</Compiler>
 		<Unit filename="Arvore.cpp" />
 		<Unit filename="Arvore.h" />
+		<Unit filename="Criptografia.cpp" />
+		<Unit filename="Criptografia.h" />
+		<Unit filename="No.cpp" />
 		<Unit filename="No.h" />
+		<Unit filename="Orquestrador.cpp" />
+		<Unit filename="Orquestrador.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="morse.cbp" />
+		<Unit filename="morse.depend" />
+		<Unit filename="morse.layout" />
+		<Unit filename="morse.txt" />
 		<Extensions>
 			<code_completion />
 			<envvars />

@@ -19,35 +19,35 @@ Arvore::Arvore() {
     raiz = no;
 }
 
-void Arvore::inserir(No* no) {
-    No* item = pesquisar(no->codigo);
+void Arvore::inserir(No* novoItem) {
+    No* item = pesquisar(novoItem->codigo);
 
     if (item != nullptr) {
-        item->letra = no->letra;
+        item->letra = novoItem->letra;
         return;
     }
 
-    No* novoItem;
     item = raiz;
-    for (int i=0; no->codigo[i] != '\0'; i++) {
-        char* codigo = copiarString(no->codigo, i+1);
 
-        No* novoItem = pesquisar(codigo);
+    for (int i=0; novoItem->codigo[i] != '\0'; i++) {
+        char* codigo = copiarString(novoItem->codigo, i+1);
 
-        if (novoItem == nullptr) {
-            novoItem = new No();
-            novoItem->direita = nullptr;
-            novoItem->esquerda = nullptr;
-            novoItem->codigo = codigo;
+        No* itemIntermediario = pesquisar(codigo);
 
-            if (item->codigo[i] == '.') {
-                item->esquerda = novoItem;
+        if (itemIntermediario == nullptr) {
+            itemIntermediario = new No();
+            itemIntermediario->direita = nullptr;
+            itemIntermediario->esquerda = nullptr;
+            itemIntermediario->codigo = codigo;
+
+            if (novoItem->codigo[i] == '.') {
+                item->esquerda = itemIntermediario;
             } else {
-                item->direita = novoItem;
+                item->direita = itemIntermediario;
             }
         }
 
-        if (item->codigo[i] == '.') {
+        if (novoItem->codigo[i] == '.') {
             item = item->esquerda;
         } else {
             item = item->direita;
@@ -55,8 +55,7 @@ void Arvore::inserir(No* no) {
 
     }
 
-    item->letra = no->letra;
-
+    item->letra = novoItem->letra;
 }
 
 char* copiarString(char* palavra, int tamanho) {
@@ -72,8 +71,6 @@ char* copiarString(char* palavra, int tamanho) {
 }
 
 void Arvore::lerPreOrdem() {
-    std::cout << "teste" << std::endl;
-
     itemPreOrdem(raiz->esquerda);
     itemPreOrdem(raiz->direita);
 }
@@ -81,9 +78,6 @@ void Arvore::lerPreOrdem() {
 void itemPreOrdem(No* no) {
     if (no == nullptr)
         return;
-
-
-    std::cout << no->codigo << std::endl;
 
     if (no->letra != '\0')
         std::cout << no->letra << " " << no->codigo << std::endl;
@@ -94,14 +88,12 @@ void itemPreOrdem(No* no) {
 
 No* Arvore::pesquisar(char* codigo) {
     No* item = raiz;
+
     for (int i=0; codigo[i] != '\0' && item != nullptr; i++) {
         if (codigo[i] == '.') {
             item = item->esquerda;
         } else {
             item = item->direita;
         }
-        std::cout << item->letra << std::endl;
-    }
-
-    return item;
+    }    return item;
 }
