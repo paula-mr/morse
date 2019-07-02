@@ -24,6 +24,7 @@ void Arvore::inserir(No* no) {
 
     if (item != nullptr) {
         item->letra = no->letra;
+        std::cout << "INSERIDO " << item->letra << " " << item->codigo << "\n";
         return;
     }
 
@@ -36,6 +37,7 @@ void Arvore::inserir(No* no) {
         novoItem->esquerda = nullptr;
         novoItem->codigo = codigo;
 
+        std::cout << "INSERIDO " << item->letra << " " << item->codigo << "\n";
         if (item->codigo[i] == '.') {
             item->esquerda = novoItem;
             item = item->esquerda;
@@ -60,15 +62,21 @@ char* copiarString(char* palavra, int tamanho) {
 }
 
 void Arvore::lerPreOrdem() {
-    std::cout << "entrei " << std::endl;
-    itemPreOrdem(raiz);
+    std::cout << "teste" << std::endl;
+
+    itemPreOrdem(raiz->esquerda);
+    itemPreOrdem(raiz->direita);
 }
 
 void itemPreOrdem(No* no) {
     if (no == nullptr)
         return;
 
-    std::cout << no->letra << " " << no->codigo << std::endl;
+
+    std::cout << no->codigo << std::endl;
+
+    if (no->letra != '\0')
+        std::cout << no->letra << " " << no->codigo << std::endl;
 
     itemPreOrdem(no->esquerda);
     itemPreOrdem(no->direita);
@@ -76,13 +84,13 @@ void itemPreOrdem(No* no) {
 
 No* Arvore::pesquisar(char* codigo) {
     No* item = raiz;
-
     for (int i=0; codigo[i] != '\0' && item != nullptr; i++) {
         if (codigo[i] == '.') {
             item = item->esquerda;
         } else {
             item = item->direita;
         }
+        std::cout << item->letra << std::endl;
     }
 
     return item;
