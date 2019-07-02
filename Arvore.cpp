@@ -24,33 +24,43 @@ void Arvore::inserir(No* no) {
 
     if (item != nullptr) {
         item->letra = no->letra;
-        std::cout << "INSERIDO " << item->letra << " " << item->codigo << "\n";
         return;
     }
 
+    No* novoItem;
     item = raiz;
-    for (int i=1; no->codigo[i] != '\0'; i++) {
-        char* codigo = copiarString(item->codigo, i);
+    for (int i=0; no->codigo[i] != '\0'; i++) {
+        char* codigo = copiarString(no->codigo, i+1);
 
-        No* novoItem = new No();
-        novoItem->direita = nullptr;
-        novoItem->esquerda = nullptr;
-        novoItem->codigo = codigo;
+        No* novoItem = pesquisar(codigo);
 
-        std::cout << "INSERIDO " << item->letra << " " << item->codigo << "\n";
+        if (novoItem == nullptr) {
+            novoItem = new No();
+            novoItem->direita = nullptr;
+            novoItem->esquerda = nullptr;
+            novoItem->codigo = codigo;
+
+            if (item->codigo[i] == '.') {
+                item->esquerda = novoItem;
+            } else {
+                item->direita = novoItem;
+            }
+        }
+
         if (item->codigo[i] == '.') {
-            item->esquerda = novoItem;
             item = item->esquerda;
         } else {
-            item->direita = novoItem;
             item = item->direita;
         }
-        i++;
+
     }
+
+    item->letra = no->letra;
+
 }
 
 char* copiarString(char* palavra, int tamanho) {
-    char* copia = (char*)malloc(10*sizeof(char));
+    char* copia = (char*)malloc((tamanho+1)*sizeof(char));
 
     for (int i = 0; i < tamanho; i++) {
         copia[i] = palavra[i];
