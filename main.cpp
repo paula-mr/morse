@@ -6,7 +6,7 @@
 
 int main () {
     Arvore* arvore = carregarArvore();
-    arvore->lerPreOrdem();
+    descriptografar(arvore);
 
     return 0;
 }

@@ -4,27 +4,36 @@
 void descriptografar(Arvore* arvore) {
     char ch;
 
-    int contandorLetras = 0, contadorCaracteresCodigo = 0;
+    int contadorLetras = 0, contadorCaracteresCodigo = 0;
+    char anterior = ' ';
 
     while((ch = getchar())) {
         char resposta[200];
         char codigo[10];
 
         if (ch == '/') {
-            resposta[contandorLetras] = ' ';
-            contadorCaracteresCodigo++;
-            contandorLetras++;
-        } else if (ch != ' ') {
+            resposta[contadorLetras] = ' ';
+            resposta[++contadorLetras] = '\0';
+            contadorCaracteresCodigo = 0;
+        } else if (ch != ' ' && ch != '\n') {
             codigo[contadorCaracteresCodigo] = ch;
             contadorCaracteresCodigo++;
-        } else {
+        } else if (anterior != '/'){
             codigo[contadorCaracteresCodigo] = '\0';
-            std::cout << codigo <<std::endl;
-            resposta[contandorLetras] = arvore->pesquisar(codigo)->letra;
-            contandorLetras++;
+            resposta[contadorLetras] = arvore->pesquisar(codigo)->letra;
+            contadorCaracteresCodigo = 0;
 
-            std::cout << resposta <<std::endl;
+            resposta[++contadorLetras] = '\0';
         }
+
+        if (ch == '\n') {
+            std::cout << resposta <<std::endl;
+            resposta[0] = '\0';
+            contadorLetras = 0;
+            contadorCaracteresCodigo = 0;
+        }
+
+        anterior = ch;
     }
 
 }

@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1562035769 source:c:\users\pauli\documents\projetos\morse\arvore.cpp
+1562104787 source:c:\users\pauli\documents\projetos\morse\arvore.cpp
 	"Arvore.h"
 	<stdio.h>
 	<string.h>
@@ -10,7 +10,7 @@
 
 1561945439 c:\users\pauli\documents\projetos\morse\no.h
 
-1562035735 source:c:\users\pauli\documents\projetos\morse\main.cpp
+1562104868 source:c:\users\pauli\documents\projetos\morse\main.cpp
 	"Arvore.h"
 	"Criptografia.h"
 	"Orquestrador.h"
@@ -27,7 +27,7 @@
 	<stdlib.h>
 	<iostream>
 
-1562035735 source:c:\users\pauli\documents\projetos\morse\criptografia.cpp
+1562107556 source:c:\users\pauli\documents\projetos\morse\criptografia.cpp
 	"Criptografia.h"
 	<iostream>
 
