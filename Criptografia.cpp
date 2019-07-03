@@ -6,11 +6,10 @@ void descriptografar(Arvore* arvore) {
 
     int contadorLetras = 0, contadorCaracteresCodigo = 0;
     char anterior = ' ';
+    char resposta[200];
+    char codigo[10];
 
-    while((ch = getchar())) {
-        char resposta[200];
-        char codigo[10];
-
+    while((ch = getchar()) != EOF) {
         if (ch == '/') {
             resposta[contadorLetras] = ' ';
             resposta[++contadorLetras] = '\0';
@@ -36,4 +35,10 @@ void descriptografar(Arvore* arvore) {
         anterior = ch;
     }
 
+    codigo[contadorCaracteresCodigo] = '\0';
+    resposta[contadorLetras] = arvore->pesquisar(codigo)->letra;
+    contadorCaracteresCodigo = 0;
+
+    resposta[++contadorLetras] = '\0';
+    std::cout << resposta <<std::endl;
 }
