@@ -40,5 +40,5 @@ void descriptografar(Arvore* arvore) {
     contadorCaracteresCodigo = 0;
 
     resposta[++contadorLetras] = '\0';
-    std::cout << resposta <<std::endl;
+    std::cout << resposta;
 }
