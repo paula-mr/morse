@@ -80,7 +80,7 @@ void itemPreOrdem(No* no) {
         return;
 
     if (no->letra != '\0')
-        std::cout << no->letra << " " << no->codigo << std::endl;
+        std::cout << std::endl << no->letra << " " << no->codigo;
 
     itemPreOrdem(no->esquerda);
     itemPreOrdem(no->direita);
