@@ -1,4 +1,4 @@
-#import "Orquestrador.h"
+#include "Orquestrador.h"
 
 #include <stdio.h>
 #include <stdlib.h>
