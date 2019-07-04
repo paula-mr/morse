@@ -85,10 +85,8 @@ char* copiarString(char* palavra, int tamanho) {
 }
 
 void Arvore::lerPreOrdem() {
-    //le a arvore no tipo pre ordem a partir da subarvore da esquerda
-    itemPreOrdem(raiz->esquerda);
-    //le a arvore no tipo pre ordem a partir da subarvore da direita
-    itemPreOrdem(raiz->direita);
+    //le a arvore no tipo pre ordem
+    itemPreOrdem(raiz);
 }
 
 void itemPreOrdem(No* no) {
